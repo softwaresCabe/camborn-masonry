@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Shield / badge background -->
+  <path d="M10 12 Q10 8 14 8 L86 8 Q90 8 90 12 L90 62 Q90 78 50 94 Q10 78 10 62 Z" fill="#b4bbd4"/>
+  <!-- Inner navy panel -->
+  <path d="M16 18 Q16 14 20 14 L80 14 Q84 14 84 18 L84 58 Q84 72 50 86 Q16 72 16 58 Z" fill="#2a3f7a"/>
+  <!-- Brick row 1 -->
+  <rect x="22" y="46" width="24" height="9" rx="2" fill="#b4bbd4"/>
+  <rect x="50" y="46" width="28" height="9" rx="2" fill="#b4bbd4"/>
+  <!-- Brick row 2 -->
+  <rect x="22" y="58" width="18" height="9" rx="2" fill="#b4bbd4"/>
+  <rect x="44" y="58" width="22" height="9" rx="2" fill="#b4bbd4"/>
+  <rect x="70" y="58" width="8"  height="9" rx="2" fill="#b4bbd4"/>
+</svg>
