@@ -24,19 +24,26 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ── Contact form handler
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
   e.preventDefault();
-  const form    = e.target;
-  const success = form.querySelector('.form-success') || createSuccessEl(form);
+  const form = e.target;
+  const data = new URLSearchParams(new FormData(form)).toString();
 
-  // Show success message (in production, replace with a real form service)
-  success.style.display = 'block';
-  form.reset();
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data,
+    });
 
-  // Scroll to success
-  success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-  setTimeout(() => { success.style.display = 'none'; }, 6000);
+    const success = form.querySelector('.form-success') || createSuccessEl(form);
+    success.style.display = 'block';
+    form.reset();
+    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    setTimeout(() => { success.style.display = 'none'; }, 6000);
+  } catch (err) {
+    alert("Something went wrong. Please call us at 442-260-5727.");
+  }
 }
 
 function createSuccessEl(form) {
