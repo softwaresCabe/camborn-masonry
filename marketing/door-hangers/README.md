@@ -29,7 +29,7 @@ Both codes were checked by decoding them from the rendered 300 DPI files.
 
 ## Editing and rebuilding
 
-Copy (phone, services, hours, QR targets) lives in the `BIZ` object at the top of `generate.js`.
+Copy (phone, services, hours, QR targets, and the jokes: `joke` for the front sticky note, `instagramAside` for the back) lives in the `BIZ` object at the top of `generate.js`. Fonts: Inter and Caveat (SIL Open Font License).
 
 ```bash
 cd marketing/door-hangers

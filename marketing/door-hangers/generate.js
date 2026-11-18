@@ -26,6 +26,9 @@ const BIZ = {
   area: 'Desert Hot Springs & surrounding areas',
   hours: ['Mon – Sat: 7am – 6pm', 'Sun: By appointment'],
   instagram: '@cambron_masonry',
+  // The humor bits. Front: handwritten sticky note over the photo. Back: aside next to Instagram.
+  joke: "Great at concrete.<br>Terrible at social media.<br><em>So... here's a flyer.</em>",
+  instagramAside: "(I'm trying, okay? Give us a follow.)",
   services: ['Concrete Flatwork', 'Paver Installation', 'Stamped Concrete', 'Decorative Overlays', 'Retaining Walls', 'Repair & Restoration'],
 };
 
@@ -42,7 +45,8 @@ const dataUri = (file, mime) => `data:${mime};base64,${fs.readFileSync(file).toS
 
 const fontFaces = [400, 600, 700, 800, 900].map((w) =>
   `@font-face{font-family:Inter;font-weight:${w};src:url(${dataUri(path.join(here, 'assets', `inter-latin-${w}-normal.woff2`), 'font/woff2')}) format('woff2')}`
-).join('');
+).join('') +
+  `@font-face{font-family:Caveat;font-weight:700;src:url(${dataUri(path.join(here, 'assets', 'caveat-latin-700-normal.woff2'), 'font/woff2')}) format('woff2')}`;
 const logo  = dataUri(path.join(here, 'assets', 'logo-badge.jpg'), 'image/jpeg');
 const photo = (n) => dataUri(path.join(site, 'images', 'portfolio', `photo-${n}.png`), 'image/png');
 
@@ -74,6 +78,9 @@ h1{font-weight:900;letter-spacing:-.02em;line-height:1.02}
 .qr-copy h2{font-size:15pt;font-weight:900;line-height:1.05;letter-spacing:-.01em}
 .qr-copy p{font-size:8.5pt;color:#444;margin-top:.05in;line-height:1.35}
 .scan-tag{display:inline-block;margin-bottom:.06in;background:#2a3f7a;color:#fff;font-size:7pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.03in .08in;border-radius:.04in}
+.sticky{position:absolute;width:2.05in;padding:.12in .14in .1in;background:#fff6b8;color:#1d1f2c;font-family:Caveat,cursive;font-weight:700;font-size:15.5pt;line-height:1.02;transform:rotate(-4deg);box-shadow:0 .04in .1in rgba(0,0,0,.3);z-index:2}
+.sticky::before{content:"";position:absolute;top:-.09in;left:50%;width:.7in;height:.18in;margin-left:-.35in;background:rgba(180,187,212,.85);transform:rotate(3deg)}
+.sticky em{font-style:normal;color:#2a3f7a}
 .services{display:grid;grid-template-columns:1fr 1fr;gap:.05in .12in;font-size:9pt;font-weight:600}
 .services li{list-style:none;display:flex;gap:.06in;align-items:center}
 .services li::before{content:"";flex:0 0 .11in;height:.11in;border-radius:50%;background:#2a3f7a;box-shadow:inset 0 0 0 .025in #b4bbd4}
@@ -95,6 +102,7 @@ function front(qr) {
       <p style="font-size:9pt;color:#444;line-height:1.4">Driveways, patios, pavers and walls built to handle the desert heat — by a local Desert Hot Springs crew.</p>
     </div>
     <div class="safe" style="top:5.75in"><img class="photo" src="${photo(1)}" style="height:1.55in;object-position:50% 12%"></div>
+    <div class="sticky" style="top:6.4in;right:.42in">${BIZ.joke}</div>
     <div class="safe" style="top:7.48in"><ul class="services">${BIZ.services.map((s) => `<li>${s.replace('&', '&amp;')}</li>`).join('')}</ul></div>
     <div class="safe" style="top:8.32in">
       <div class="qr-card">
@@ -139,12 +147,13 @@ function back(qr) {
         <img class="photo" src="${photo(8)}" style="height:1.15in;object-position:50% 30%">
       </div>
     </div>
-    <div class="phone-bar" style="height:1.6in;padding:.2in .375in 0;text-align:left;background:#1d1f2c">
+    <div class="phone-bar" style="height:1.9in;padding:.2in .375in 0;text-align:left;background:#1d1f2c">
       <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:.14in;font-size:8.5pt;line-height:1.45;color:#dfe2ee">
         <div><small style="text-align:left">Service area</small>${BIZ.area}</div>
         <div><small style="text-align:left">Hours</small>${BIZ.hours.join('<br>')}</div>
       </div>
       <p style="margin-top:.14in;font-size:8.5pt;color:#dfe2ee"><small style="display:inline;text-align:left">Instagram&nbsp;</small> <b style="color:#fff">${BIZ.instagram}</b></p>
+      <p style="margin-top:.01in;font-family:Caveat,cursive;font-weight:700;font-size:13pt;line-height:1.1;color:#fff6b8;transform:rotate(-1.5deg);transform-origin:left">${BIZ.instagramAside}</p>
       <p style="margin-top:.04in;font-size:8.5pt;color:#dfe2ee"><small style="display:inline;text-align:left">Web&nbsp;</small> <b style="color:#fff">cambron-masonry.com</b></p>
     </div>
   </section>`;
