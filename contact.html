@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1c2b50" />
+  <title>Request a Free Estimate | Cambron Masonry</title>
+  <meta name="description" content="Tell us about your concrete, paver, or masonry project in Desert Hot Springs and the Coachella Valley. Request a free estimate or call 442-260-5727." />
+  <link rel="canonical" href="https://cambron-masonry.netlify.app/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cambron Masonry" />
+  <meta property="og:url" content="https://cambron-masonry.netlify.app/contact.html" />
+  <meta property="og:title" content="Request a Free Estimate | Cambron Masonry" />
+  <meta property="og:description" content="Tell us about your concrete, paver, or masonry project. Free estimates in Desert Hot Springs &amp; surrounding areas." />
+  <meta property="og:image" content="https://cambron-masonry.netlify.app/social-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cambron Masonry logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://cambron-masonry.netlify.app/social-card.png" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="contact-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- ── TOP BAR ── -->
+  <div class="topbar">
+    <span>Serving Desert Hot Springs &amp; Surrounding Areas</span>
+    <a href="tel:4422605727" class="topbar-phone">&#128222; 442-260-5727</a>
+  </div>
+
+  <!-- ── HEADER / NAV ── -->
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a href="./" class="logo" aria-label="Cambron Masonry home">
+        <img src="logo.JPEG" alt="Cambron Masonry" class="logo-img" width="1024" height="1024" />
+      </a>
+      <nav class="nav" id="nav" aria-label="Primary navigation">
+        <a href="./#services">Services</a>
+        <a href="./#gallery">Our Work</a>
+        <a href="./#about">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="tel:4422605727" class="btn btn-primary nav-cta">&#128222; 442-260-5727</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-controls="nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="contact-hero">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <p class="section-eyebrow">Free Estimate Request</p>
+          <h1>Tell us about your concrete or masonry project.</h1>
+          <p class="contact-lead">Share a few quick details — what you need, the size of the job, and your timing. We'll review your request and follow up the way you prefer.</p>
+
+          <ul class="contact-steps" aria-label="How it works">
+            <li><span>1</span> Pick the services you're interested in</li>
+            <li><span>2</span> Tell us about the property and project size</li>
+            <li><span>3</span> We reach out to schedule your free estimate</li>
+          </ul>
+
+          <div class="contact-actions">
+            <a href="tel:4422605727" class="btn btn-primary btn-lg">&#128222;&nbsp; Call or Text 442-260-5727</a>
+            <a href="./" class="inline-link">&larr; Back to home</a>
+          </div>
+
+          <div class="contact-info contact-info-compact">
+            <div class="contact-card">
+              <div class="contact-icon" aria-hidden="true">&#128205;</div>
+              <div>
+                <p class="contact-label">Service Area</p>
+                <p class="contact-value">Desert Hot Springs, CA<br />and surrounding areas</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon" aria-hidden="true">&#128337;</div>
+              <div>
+                <p class="contact-label">Hours</p>
+                <p class="contact-value">Mon – Sat: 7am – 6pm<br />Sun: By appointment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── GUIDED ESTIMATE FORM ──
+             Netlify detects this form at deploy time. Every field it records has a
+             name attribute below; estimate.js joins multi-select groups into one value each. -->
+        <form class="estimate-form" id="estimateForm" name="estimate-request" method="POST" action="thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="estimate-request" />
+          <p class="honeypot">
+            <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
+
+          <div class="form-progress js-only">
+            <div class="progress-copy">
+              <span>Build your project request</span>
+              <span id="progressLabel">Step 1 of 5</span>
+            </div>
+            <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+          </div>
+
+          <div class="form-error" id="formError" role="alert" hidden></div>
+
+          <!-- Step 1: Services -->
+          <div class="form-step" data-step="0" data-label="Services">
+            <div class="form-heading">
+              <span>Start with what you need</span>
+              <h2 tabindex="-1">What can we help with?</h2>
+              <p>Choose as many as you'd like.</p>
+            </div>
+            <fieldset class="choice-fieldset">
+              <legend class="visually-hidden">Services you are interested in</legend>
+              <div class="choice-grid two-col" data-group="services" data-multi>
+                <label class="form-choice"><input type="checkbox" name="services" value="Concrete Flatwork" /><span class="choice-mark"></span><span>Concrete Flatwork</span></label>
+                <label class="form-choice"><input type="checkbox" name="services" value="Decorative Overlay" /><span class="choice-mark"></span><span>Decorative Overlay</span></label>
+                <label class="form-choice"><input type="checkbox" name="services" value="Paver Installation" /><span class="choice-mark"></span><span>Paver Installation</span></label>
+                <label class="form-choice"><input type="checkbox" name="services" value="Retaining Wall" /><span class="choice-mark"></span><span>Retaining Wall</span></label>
+                <label class="form-choice"><input type="checkbox" name="services" value="Stamped Concrete" /><span class="choice-mark"></span><span>Stamped Concrete</span></label>
+                <label class="form-choice"><input type="checkbox" name="services" value="Repair &amp; Restoration" /><span class="choice-mark"></span><span>Repair &amp; Restoration</span></label>
+                <label class="form-choice"><input type="checkbox" name="services" value="Not sure yet" data-exclusive /><span class="choice-mark"></span><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Step 2: Project -->
+          <div class="form-step" data-step="1" data-label="Project">
+            <div class="form-heading">
+              <span>A little context</span>
+              <h2 tabindex="-1">Tell us about the project</h2>
+              <p>Rough answers are fine — this just helps us prepare your estimate.</p>
+            </div>
+            <fieldset class="choice-fieldset">
+              <legend>What type of property is this?</legend>
+              <div class="choice-grid two-col">
+                <label class="form-choice"><input type="radio" name="propertyType" value="Home" /><span class="choice-mark"></span><span>Home</span></label>
+                <label class="form-choice"><input type="radio" name="propertyType" value="Rental / investment property" /><span class="choice-mark"></span><span>Rental / investment</span></label>
+                <label class="form-choice"><input type="radio" name="propertyType" value="Business / commercial" /><span class="choice-mark"></span><span>Business / commercial</span></label>
+                <label class="form-choice"><input type="radio" name="propertyType" value="Other" /><span class="choice-mark"></span><span>Other</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="choice-fieldset">
+              <legend>About how big is the area?</legend>
+              <div class="choice-grid two-col">
+                <label class="form-choice"><input type="radio" name="projectSize" value="Small (under 200 sq ft)" /><span class="choice-mark"></span><span>Small <small>under 200 sq ft</small></span></label>
+                <label class="form-choice"><input type="radio" name="projectSize" value="Medium (200–600 sq ft)" /><span class="choice-mark"></span><span>Medium <small>200–600 sq ft</small></span></label>
+                <label class="form-choice"><input type="radio" name="projectSize" value="Large (600+ sq ft)" /><span class="choice-mark"></span><span>Large <small>600+ sq ft</small></span></label>
+                <label class="form-choice"><input type="radio" name="projectSize" value="Not sure" /><span class="choice-mark"></span><span>Not sure</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Step 3: Priorities -->
+          <div class="form-step" data-step="2" data-label="Priorities">
+            <div class="form-heading">
+              <span>Shape your options</span>
+              <h2 tabindex="-1">What matters most to you?</h2>
+              <p>Choose all that apply so we can focus on the right materials and finishes.</p>
+            </div>
+            <fieldset class="choice-fieldset">
+              <legend class="visually-hidden">Your project priorities</legend>
+              <div class="choice-grid" data-group="priorities" data-multi>
+                <label class="form-choice"><input type="checkbox" name="priorities" value="Curb appeal / a fresh look" /><span class="choice-mark"></span><span>Curb appeal / a fresh look</span></label>
+                <label class="form-choice"><input type="checkbox" name="priorities" value="Holds up to desert heat" /><span class="choice-mark"></span><span>Holds up to desert heat</span></label>
+                <label class="form-choice"><input type="checkbox" name="priorities" value="Cooler surface underfoot" /><span class="choice-mark"></span><span>Cooler surface underfoot</span></label>
+                <label class="form-choice"><input type="checkbox" name="priorities" value="Low maintenance" /><span class="choice-mark"></span><span>Low maintenance</span></label>
+                <label class="form-choice"><input type="checkbox" name="priorities" value="Fixing cracks or damage" /><span class="choice-mark"></span><span>Fixing cracks or damage</span></label>
+                <label class="form-choice"><input type="checkbox" name="priorities" value="Help choosing materials" /><span class="choice-mark"></span><span>Help choosing materials</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Step 4: Timing -->
+          <div class="form-step" data-step="3" data-label="Timing">
+            <div class="form-heading">
+              <span>Almost there</span>
+              <h2 tabindex="-1">When and where?</h2>
+              <p>This helps us plan before we reach out about scheduling.</p>
+            </div>
+            <fieldset class="choice-fieldset">
+              <legend>When are you hoping to get started?</legend>
+              <div class="choice-grid two-col">
+                <label class="form-choice"><input type="radio" name="timeline" value="As soon as possible" /><span class="choice-mark"></span><span>As soon as possible</span></label>
+                <label class="form-choice"><input type="radio" name="timeline" value="Within a month" /><span class="choice-mark"></span><span>Within a month</span></label>
+                <label class="form-choice"><input type="radio" name="timeline" value="1–3 months" /><span class="choice-mark"></span><span>1–3 months</span></label>
+                <label class="form-choice"><input type="radio" name="timeline" value="Just planning / getting prices" /><span class="choice-mark"></span><span>Just planning</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="address">Project city or ZIP <em>Optional</em></label>
+              <input id="address" name="address" placeholder="e.g. Desert Hot Springs or 92240" autocomplete="postal-code" />
+            </div>
+            <div class="field">
+              <label for="message">Anything else we should know? <em>Optional</em></label>
+              <textarea id="message" name="message" rows="3" placeholder="Driveway, patio, pool deck, existing cracks, colors you like…"></textarea>
+            </div>
+          </div>
+
+          <!-- Step 5: Contact -->
+          <div class="form-step" data-step="4" data-label="Contact">
+            <div class="form-heading">
+              <span>Your request is ready</span>
+              <h2 tabindex="-1">How can we reach you?</h2>
+              <p>Submit your details and we'll follow up about your free estimate.</p>
+            </div>
+            <div class="selection-summary js-only">
+              <strong>Your project request</strong>
+              <span id="selectionSummary"></span>
+              <button type="button" id="editSelections">Edit</button>
+            </div>
+            <div class="field">
+              <label for="name">Full name <em>Required</em></label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="phone">Phone <em>Required</em></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+              <div class="field">
+                <label for="email">Email <em>Optional</em></label>
+                <input id="email" name="email" type="email" autocomplete="email" />
+              </div>
+            </div>
+            <fieldset class="choice-fieldset">
+              <legend>How would you prefer to hear from us?</legend>
+              <div class="choice-grid three-col">
+                <label class="form-choice"><input type="radio" name="preferredContact" value="Phone call" /><span class="choice-mark"></span><span>Phone call</span></label>
+                <label class="form-choice"><input type="radio" name="preferredContact" value="Text message" /><span class="choice-mark"></span><span>Text message</span></label>
+                <label class="form-choice"><input type="radio" name="preferredContact" value="Email" /><span class="choice-mark"></span><span>Email</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-navigation">
+            <button class="form-back" type="button" id="formBack" hidden>&larr; Back</button>
+            <button class="form-next" type="button" id="formNext" hidden>Continue &rarr;</button>
+            <button class="form-submit" type="submit" id="formSubmit">Send my request</button>
+          </div>
+
+          <p class="form-privacy" id="formPrivacy">By submitting, you ask Cambron Masonry to contact you about this project by phone, text, or email. Or call us directly at <a href="tel:4422605727">442-260-5727</a>.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="./" class="logo logo-light">
+          <img src="logo.JPEG" alt="Cambron Masonry" class="logo-img" />
+        </a>
+        <p>Quality masonry &amp; concrete work<br />in Desert Hot Springs, CA.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="./#services">Concrete Flatwork</a>
+        <a href="./#services">Decorative Overlays</a>
+        <a href="./#services">Paver Installation</a>
+        <a href="./#services">Retaining Walls</a>
+        <a href="./#services">Stamped Concrete</a>
+        <a href="./#services">Repair &amp; Restoration</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <a href="tel:4422605727">442-260-5727</a>
+        <p>Desert Hot Springs, CA<br />and surrounding areas</p>
+        <a href="https://www.instagram.com/cambron_masonry/" target="_blank" rel="noopener">Instagram @cambron_masonry</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Cambron Masonry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── STICKY MOBILE CTA ── -->
+  <a href="tel:4422605727" class="float-call" aria-label="Call Cambron Masonry at 442-260-5727">&#128222; Call Now</a>
+
+  <script src="script.js"></script>
+  <script src="estimate.js"></script>
+</body>
+</html>

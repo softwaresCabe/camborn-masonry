@@ -6,28 +6,69 @@
   <title>Cambron Masonry | Desert Hot Springs, CA</title>
   <meta name="description" content="Professional masonry services in Desert Hot Springs, CA. Concrete, pavers, overlays & more. Call for a free estimate: 442-260-5727" />
 
-  <meta property="og:url" content="https://Cambron-masonry.netlify.app/" />
+  <meta name="theme-color" content="#1c2b50" />
+  <link rel="canonical" href="https://cambron-masonry.netlify.app/" />
 
-  <!-- Open Graph / iMessage / Social preview -->
+  <!-- Open Graph / iMessage / SMS / social link preview -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cambron Masonry" />
+  <meta property="og:url" content="https://cambron-masonry.netlify.app/" />
   <meta property="og:title" content="Cambron Masonry | Desert Hot Springs, CA" />
-  <meta property="og:description" content="Professional masonry & concrete services. Pavers, overlays, flatwork & more. Call for a free estimate: 442-260-5727" />
-  <meta property="og:image" content="https://Cambron-masonry.netlify.app/logo.JPEG" />
-  <meta property="og:image:width" content="1024" />
-  <meta property="og:image:height" content="1024" />
-
-  <!-- Twitter / iMessage fallback -->
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:description" content="Professional masonry &amp; concrete services. Pavers, overlays, flatwork &amp; more. Call for a free estimate: 442-260-5727" />
+  <meta property="og:image" content="https://cambron-masonry.netlify.app/social-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cambron Masonry — Masonry &amp; Concrete Built to Last" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cambron Masonry | Desert Hot Springs, CA" />
-  <meta name="twitter:description" content="Professional masonry & concrete services in Desert Hot Springs, CA." />
-  <meta name="twitter:image" content="https://Cambron-masonry.netlify.app/logo.JPEG" />
+  <meta name="twitter:description" content="Professional masonry &amp; concrete services in Desert Hot Springs, CA." />
+  <meta name="twitter:image" content="https://cambron-masonry.netlify.app/social-card.png" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Cambron Masonry",
+    "url": "https://cambron-masonry.netlify.app/",
+    "image": "https://cambron-masonry.netlify.app/social-card.png",
+    "logo": "https://cambron-masonry.netlify.app/logo.JPEG",
+    "telephone": "+1-442-260-5727",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Desert Hot Springs",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Desert Hot Springs, CA" },
+      { "@type": "Place", "name": "Coachella Valley, CA" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": ["https://www.instagram.com/cambron_masonry/"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ── TOP BAR ── -->
   <div class="topbar">
@@ -38,21 +79,23 @@
   <!-- ── HEADER / NAV ── -->
   <header class="header" id="top">
     <div class="container header-inner">
-      <a href="#top" class="logo">
-        <img src="logo.JPEG" alt="Cambron Masonry" class="logo-img" />
+      <a href="#top" class="logo" aria-label="Cambron Masonry home">
+        <img src="logo.JPEG" alt="Cambron Masonry" class="logo-img" width="1024" height="1024" />
       </a>
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#gallery">Our Work</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="tel:4422605727" class="btn btn-primary nav-cta">Free Estimate</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Free Estimate</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-controls="nav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
+
+  <main id="main-content">
 
   <!-- ── HERO ── -->
   <section class="hero">
@@ -63,7 +106,7 @@
       <p class="hero-sub">From custom pavers to decorative overlays, we transform outdoor spaces with craftsmanship you can count on.</p>
       <div class="hero-actions">
         <a href="tel:4422605727" class="btn btn-primary btn-lg">&#128222;&nbsp; Call for a Free Estimate</a>
-        <a href="#services" class="btn btn-outline btn-lg">See Our Services</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Request a Free Estimate</a>
       </div>
     </div>
   </section>
@@ -174,7 +217,10 @@
         <h2>Ready to Start Your Project?</h2>
         <p>Call or text us today for a free, no-pressure estimate.</p>
       </div>
-      <a href="tel:4422605727" class="btn btn-white btn-lg">&#128222;&nbsp; 442-260-5727</a>
+      <div class="cta-band-actions">
+        <a href="tel:4422605727" class="btn btn-white btn-lg">&#128222;&nbsp; 442-260-5727</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Request an Estimate</a>
+      </div>
     </div>
   </section>
 
@@ -262,67 +308,49 @@
       <div class="section-header">
         <p class="section-eyebrow">Get In Touch</p>
         <h2>Request a Free Estimate</h2>
-        <p class="section-sub">Fill out the form below and we'll get back to you shortly — or just give us a call.</p>
+        <p class="section-sub">Tell us about your project online and we'll get back to you shortly — or just give us a call.</p>
       </div>
       <div class="contact-inner">
         <div class="contact-info">
           <div class="contact-card">
-            <div class="contact-icon">&#128222;</div>
+            <div class="contact-icon" aria-hidden="true">&#128222;</div>
             <div>
               <p class="contact-label">Call or Text</p>
               <a href="tel:4422605727" class="contact-value">442-260-5727</a>
             </div>
           </div>
           <div class="contact-card">
-            <div class="contact-icon">&#128205;</div>
+            <div class="contact-icon" aria-hidden="true">&#128205;</div>
             <div>
               <p class="contact-label">Service Area</p>
               <p class="contact-value">Desert Hot Springs, CA<br />and surrounding areas</p>
             </div>
           </div>
           <div class="contact-card">
-            <div class="contact-icon">&#128337;</div>
+            <div class="contact-icon" aria-hidden="true">&#128337;</div>
             <div>
               <p class="contact-label">Hours</p>
               <p class="contact-value">Mon – Sat: 7am – 6pm<br />Sun: By appointment</p>
             </div>
           </div>
         </div>
-        <form class="contact-form" id="contactForm" name="estimate-request" netlify data-netlify="true" onsubmit="handleFormSubmit(event)">
-          <input type="hidden" name="form-name" value="estimate-request" />
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="John Smith" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(760) 555-0100" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="service">Service Needed</label>
-            <select id="service" name="service">
-              <option value="">— Select a service —</option>
-              <option>Concrete Flatwork</option>
-              <option>Decorative Overlay</option>
-              <option>Paver Installation</option>
-              <option>Retaining Wall</option>
-              <option>Stamped Concrete</option>
-              <option>Repair &amp; Restoration</option>
-              <option>Other / Not Sure</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Project Description</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your project…"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-full">Send My Request</button>
-          <p class="form-note">Or call us directly at <a href="tel:4422605727">442-260-5727</a></p>
-        </form>
+        <div class="estimate-cta-card">
+          <p class="section-eyebrow">Takes about a minute</p>
+          <h3>Build your project request</h3>
+          <p>Answer a few quick questions — services, project size, priorities, and timing — so we can come prepared for your free estimate.</p>
+          <ol class="estimate-cta-steps">
+            <li>Pick the services you're interested in</li>
+            <li>Tell us about the property and project size</li>
+            <li>Choose your timing and how to reach you</li>
+          </ol>
+          <a href="contact.html" class="btn btn-primary btn-lg btn-full">Start My Free Estimate &rarr;</a>
+          <p class="form-note">Prefer to talk? Call or text <a href="tel:4422605727">442-260-5727</a></p>
+        </div>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ── FOOTER ── -->
   <footer class="footer">
@@ -346,7 +374,7 @@
         <h4>Contact</h4>
         <a href="tel:4422605727">442-260-5727</a>
         <p>Desert Hot Springs, CA<br />and surrounding areas</p>
-        <a href="#contact" class="btn btn-outline-light">Free Estimate</a>
+        <a href="contact.html" class="btn btn-outline-light">Free Estimate</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -357,7 +385,7 @@
   </footer>
 
   <!-- ── FLOATING CALL BUTTON (mobile) ── -->
-  <a href="tel:4422605727" class="float-call" aria-label="Call us">
+  <a href="tel:4422605727" class="float-call" aria-label="Call Cambron Masonry at 442-260-5727">
     &#128222; Call Now
   </a>
 

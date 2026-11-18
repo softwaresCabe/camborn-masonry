@@ -2,78 +2,50 @@
 const navToggle = document.getElementById('navToggle');
 const nav       = document.getElementById('nav');
 
-navToggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
-  navToggle.classList.toggle('active');
-});
-
-// Close nav on link click (mobile)
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    navToggle.classList.remove('active');
-  });
-});
-
-// ── Sticky header shadow
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-  header.style.boxShadow = window.scrollY > 10
-    ? '0 2px 20px rgba(0,0,0,.12)'
-    : '0 2px 12px rgba(0,0,0,.06)';
-}, { passive: true });
-
-// ── Contact form handler
-async function handleFormSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new URLSearchParams(new FormData(form)).toString();
-
-  try {
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: data,
-    });
-
-    const success = form.querySelector('.form-success') || createSuccessEl(form);
-    success.style.display = 'block';
-    form.reset();
-    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    setTimeout(() => { success.style.display = 'none'; }, 6000);
-  } catch (err) {
-    alert("Something went wrong. Please call us at 442-260-5727.");
-  }
+function setNav(open) {
+  nav.classList.toggle('open', open);
+  navToggle.classList.toggle('active', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
 }
 
-function createSuccessEl(form) {
-  const el = document.createElement('div');
-  el.className = 'form-success';
-  el.textContent = "✓ Thanks! We'll be in touch shortly. Or call us at 442-260-5727.";
-  form.prepend(el);
-  return el;
-}
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => setNav(!nav.classList.contains('open')));
 
-// ── Animate elements on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+  // Close nav on link click or Escape (mobile)
+  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setNav(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      setNav(false);
+      navToggle.focus();
     }
   });
-}, { threshold: 0.1 });
+}
 
-document.querySelectorAll('.service-card, .gallery-item, .contact-card').forEach(el => {
-  el.style.opacity  = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity .5s ease, transform .5s ease';
-  observer.observe(el);
-});
+// ── Sticky header: compact + stronger shadow once the page scrolls
+const header = document.querySelector('.header');
+if (header) {
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Style for visible state
-  const style = document.createElement('style');
-  style.textContent = '.service-card.visible, .gallery-item.visible, .contact-card.visible { opacity: 1 !important; transform: none !important; }';
-  document.head.appendChild(style);
-});
+// ── Reveal cards on scroll (skipped when the visitor prefers reduced motion)
+const revealTargets = document.querySelectorAll('.service-card, .gallery-item, .contact-card');
+const reduceMotion  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!reduceMotion && 'IntersectionObserver' in window && revealTargets.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealTargets.forEach((el) => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+}
