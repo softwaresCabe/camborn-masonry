@@ -6,7 +6,7 @@ Standard **4.25" × 11"** door hanger, two sides, with a 1.25" hang hole centere
 
 | Side  | QR code goes to | Purpose |
 |-------|-----------------|---------|
-| Front | `https://cambron-masonry.netlify.app/contact.html?utm_source=door-hanger` | Opens the guided free-estimate form |
+| Front | `https://cambron-masonry.com/contact.html?utm_source=door-hanger` | Opens the guided free-estimate form |
 | Back  | `tel:+14422605727` | Opens the phone dialer with 442-260-5727 |
 
 Both codes were checked by decoding them from the rendered 300 DPI files.

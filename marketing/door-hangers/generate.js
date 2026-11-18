@@ -22,7 +22,7 @@ const BIZ = {
   phoneTel: 'tel:+14422605727',
   // Front QR → guided estimate form. Short UTM tag keeps the code easy to scan and lets you
   // spot door-hanger visits in analytics.
-  estimateUrl: 'https://cambron-masonry.netlify.app/contact.html?utm_source=door-hanger',
+  estimateUrl: 'https://cambron-masonry.com/contact.html?utm_source=door-hanger',
   area: 'Desert Hot Springs & surrounding areas',
   hours: ['Mon – Sat: 7am – 6pm', 'Sun: By appointment'],
   instagram: '@cambron_masonry',
@@ -145,7 +145,7 @@ function back(qr) {
         <div><small style="text-align:left">Hours</small>${BIZ.hours.join('<br>')}</div>
       </div>
       <p style="margin-top:.14in;font-size:8.5pt;color:#dfe2ee"><small style="display:inline;text-align:left">Instagram&nbsp;</small> <b style="color:#fff">${BIZ.instagram}</b></p>
-      <p style="margin-top:.04in;font-size:8.5pt;color:#dfe2ee"><small style="display:inline;text-align:left">Web&nbsp;</small> <b style="color:#fff">cambron-masonry.netlify.app</b></p>
+      <p style="margin-top:.04in;font-size:8.5pt;color:#dfe2ee"><small style="display:inline;text-align:left">Web&nbsp;</small> <b style="color:#fff">cambron-masonry.com</b></p>
     </div>
   </section>`;
 }
