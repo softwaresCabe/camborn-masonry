@@ -1,0 +1,7 @@
+{
+  "name": "cambron-door-hangers",
+  "private": true,
+  "description": "Generates print-ready door hanger artwork for Cambron Masonry",
+  "scripts": { "build": "node generate.js" },
+  "dependencies": { "qrcode": "1.5.4" }
+}
